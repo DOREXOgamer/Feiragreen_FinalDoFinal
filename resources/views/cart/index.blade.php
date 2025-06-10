@@ -89,7 +89,7 @@
                 
                 <div class="carrinho-resumo-linha carrinho-resumo-total">
                     <span class="carrinho-resumo-label">Total</span>
-                    <span class="carrinho-resumo-valor" id="total-final">R$ {{ number_format($total + 15, 2, ',', '.') }}</span>
+                    <span class="carrinho-resumo-valor" id="total-final">R$ {{ number_format($total, 2, ',', '.') }}</span>
                 </div>
                 
                 <button class="carrinho-btn-finalizar">
