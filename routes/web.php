@@ -28,25 +28,25 @@ Route::post('/cadastro', [RegisterController::class, 'register'])->name('registe
 
 
     
-    // Profile routes
+    // Rotas perfil
     Route::get('/perfil', [HomeController::class, 'perfil'])->name('perfil');
     Route::post('/perfil/update', [HomeController::class, 'updatePerfil'])->name('perfil.update');
     Route::post('/produto/add', [HomeController::class, 'addProduto'])->name('produto.add');
     Route::get('/produto/{id}', [HomeController::class, 'showProduto'])->name('produto.show');
     Route::post('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
-    // Cart routes
+    // Carrinho Rotas
     Route::get('/carrinho', [CartController::class, 'index'])->name('cart.index');
     Route::post('/carrinho/adicionar/{id}', [CartController::class, 'add'])->name('cart.add');
     Route::post('/carrinho/atualizar/{id}', [CartController::class, 'update'])->name('cart.update');
     Route::post('/carrinho/remover/{id}', [CartController::class, 'remove'])->name('cart.remove');
 
-    // Product edit/delete routes
+    // Editar e deletar
     Route::get('/produto/editar/{id}', [HomeController::class, 'editProduto'])->name('produto.edit');
     Route::put('/produto/atualizar/{id}', [HomeController::class, 'updateProduto'])->name('produto.update');
     Route::delete('/produto/deletar/{id}', [HomeController::class, 'deleteProduto'])->name('produto.delete');
 
-    // User account deletion
+    // Deletar usuario
     Route::delete('/perfil/deletar', [HomeController::class, 'deleteAccount'])->name('perfil.delete');
 
         Route::get('/meus-produtos', [HomeController::class, 'indexProdutos'])
